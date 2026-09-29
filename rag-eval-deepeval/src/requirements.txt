@@ -1,0 +1,8 @@
+streamlit
+langsmith
+langchain_openai
+langchain_core
+dotenv
+sentence_transformers
+langchain_text_splitters
+langchain_chroma
