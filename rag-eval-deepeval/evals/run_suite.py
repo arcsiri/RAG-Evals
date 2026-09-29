@@ -40,7 +40,8 @@ from evals import (
     eval_ops,
 )
 from evals.metric_registry import rule_for
-from evals.compare import compare, classify
+from goldens.version_manager import VersionManager
+
 
 load_dotenv()
 
@@ -103,14 +104,13 @@ def _prompt_hash():
         return "unknown"
 
 
-def build_metadata(label):
+def build_metadata(label, goldens_versions=None):
     return {
         "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "git_sha": _git_sha(),
         "prompt_hash": _prompt_hash(),
         "label": label,          # human note: what change this snapshot represents
-        # TODO: once you have a central config, stamp model / top_k / embedding here
-        #       so the baseline records exactly what pipeline it measured.
+        "goldens_versions": goldens_versions or {},
     }
 
 

@@ -1,0 +1,12 @@
+{
+  "active_versions": {
+    "correctness": "v0",
+    "faithfulness_dataset": "v0",
+    "leakage": "v0",
+    "retriever_deepeval": "v0",
+    "retriever": "v0",
+    "scope": "v0",
+    "toxicity": "v0"
+  },
+  "global_version": "v0"
+}
